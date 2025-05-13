@@ -1,24 +1,27 @@
-<?php
-session_start();
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $id = isset($_POST["id"]) ? trim($_POST["id"]) : "";
-    $nom = isset($_POST["nom"]) ? trim($_POST["nom"]) : "";
-    $prix = isset($_POST["prix"]) ? trim($_POST["prix"]) : "";
-    $stock = isset($_POST["stock"]) ? trim($_POST["stock"]) : "";
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un Produit</title>
+</head>
+<body>
+<h1>Ajouter un Nouveau Produit</h1>
 
-//  Vérification que le camp n'est pas vide
-    if ($nom !== '') { // si name c'est pas vide,sa passeici
-        // Stockage dans la session
-        $_SESSION['message'] = "Merci $nom !"; // on le stock ici message peu etre remplacer par ce qu'on veux
+<form action="add_produit" method="post">
+    <div>
+        <label for="nom">Nom du produit :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+    </div>
+    <div>
+        <label for="prix">Prix :</label>
+        <input type="number" id="prix" name="prix" step="0.01" required><br><br>
+    </div>
+    <div>
+        <label for="stock">Stock :</label>
+        <input type="number" id="stock" name="stock" required><br><br>
+    </div>
+    <input type="submit" value="Ajouter le produit">
+</form>
 
-        // Redirection vers la même page
-        header("Location: form.php"); // Toujours coller Location avec les : , permet de faire la redirection automatique
-        exit();
-    } else { // si name est vide, sa passe ici
-        // Message d'erreur
-        $_SESSION['message'] = "Veuillez indiquer votre nom !";
-    }
-
-}
-
-?>
+<p><a href="index.php">Retour à la liste des produits</a></p>
+</body>
+</html>
