@@ -33,7 +33,6 @@ require 'edit.php';
     </tr>
     </thead>
     <tbody>
-    mm
     <?php foreach($produits as $p): ?>
         <tr>
             <td><?= htmlspecialchars($p['id']) ?></td>
