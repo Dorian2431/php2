@@ -39,8 +39,8 @@ require 'edit.php';
             <td><?= htmlspecialchars($p['nom']) ?></td>
             <td><?= htmlspecialchars($p['prix']) ?></td>
             <td><?= htmlspecialchars($p['stock']) ?></td>
-            <td><a href="edit.php?id=<?= $produit['id'] ?>"><button>Modifier</button></a></td>
-            <td><a href="delete.php?id=<?= $produit['id'] ?>"><button>Supprimer</button></a></td>
+            <td><a href="edit.php?id=<?= $produits['id'] ?>"><button>Modifier</button></a></td>
+            <td><a href="delete.php?id=<?= $produits['id'] ?>"><button>Supprimer</button></a></td>
         </tr>
     <?php endforeach; ?>
 

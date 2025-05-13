@@ -7,9 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stock = isset($_POST["stock"]) ? trim($_POST["stock"]) : "";
 
 //  Vérification que le camp n'est pas vide
-    if ($name !== '') { // si name c'est pas vide,sa passeici
+    if ($nom !== '') { // si name c'est pas vide,sa passeici
         // Stockage dans la session
-        $_SESSION['message'] = "Merci $name !"; // on le stock ici message peu etre remplacer par ce qu'on veux
+        $_SESSION['message'] = "Merci $nom !"; // on le stock ici message peu etre remplacer par ce qu'on veux
 
         // Redirection vers la même page
         header("Location: form.php"); // Toujours coller Location avec les : , permet de faire la redirection automatique
