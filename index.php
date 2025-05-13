@@ -34,6 +34,8 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <th>Nom</th>
         <th>Prix</th>
         <th>Stocks</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
     </tr>
     </thead>
     <tbody>
@@ -43,8 +45,8 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($p['nom']) ?></td>
             <td><?= htmlspecialchars($p['prix']) ?></td>
             <td><?= htmlspecialchars($p['stock']) ?></td>
-            <td><a href="edit.php?id=<?= $produits['id'] ?>"><button>Modifier</button></a></td>
-            <td><a href="delete.php?id=<?= $produits['id'] ?>"><button>Supprimer</button></a></td>
+            <td><a href="edit.php?id=<?= $p['id'] ?>"><button>Modifier</button></a></td>
+            <td><a href="delete.php?id=<?= $p['id'] ?>"><button>Supprimer</button></a></td>
         </tr>
     <?php endforeach; ?>
 
