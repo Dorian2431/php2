@@ -1,8 +1,12 @@
 <?php
 // Importation du config.php
 require 'config.php';
-require 'delete.php';
-require 'edit.php';
+
+$query = "SELECT * from produits";
+
+$stmt = $pdo->query($query);
+
+$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Insertion avec requête préparée
 //$stmt = $pdo->prepare('INSERT INTO php () VALUES (?)'); // Prepare est une fonction dans la class PDO

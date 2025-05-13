@@ -1,7 +1,6 @@
 <?php
 
 require 'config.php';
-require 'index.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -14,6 +13,8 @@ if (isset($_GET['id'])) {
     header("Location: index.php");
     exit();
 } else {
-    header("Location: index.php");
+    header("Location: index.php?erreur=id_manquant");
     exit();
 }
+
+?>

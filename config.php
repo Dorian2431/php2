@@ -17,10 +17,4 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-$query = "SELECT * from produits";
-
-$stmt = $pdo->query($query);
-
-$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
